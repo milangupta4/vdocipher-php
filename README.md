@@ -1,9 +1,11 @@
 Sample Code for VdoCipher in PHP
 
-There are 4 PHP files. `index.php` is the main file, and calls the 3 functions in the remaining files.
+There are 2 PHP files. `index.php` is the main file, and calls the 1 functions, vdo_embed_code, which returns the embed code.
 
-`vdo_init.php` contains all details such as VideoId, Client Secret Key and Annotation code. This is the only file that users have to edit.
+In `index.php` user has to only send video ID as argument to vdo_embed_code
 
-`vdo_otp.php` uses this information to generate OTP
+In `vdo_embed_code.php` user has to configure the client secret key. The time-to-live parameter is set to 300s here.
 
-`vdo_play.php` uses OTP response to create embed code
+The idea of this file is to create a single embed code, as given in index.php, which user can use as part of their PHP view.
+
+I have not yet added customizations such as watermark, IP-geo restrictions and URL whitelisting as part of this yet.

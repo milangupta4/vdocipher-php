@@ -1,6 +1,6 @@
 <?php
 
-function vdo_embed_code($video_id){
+function vdo_embed($video_id){
   // Edit the client key here
   $client_key = '1234567890';
   $ttl = 300;

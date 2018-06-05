@@ -2,10 +2,16 @@
 
 function vdo_embed($video_id){
   // Edit the client key here
-  $client_key = '1234567890';
+  $client_key = 'a1b2c3d4e5f6';
   $ttl = 300;
+  $annotate_code = <<< WATERMARK
+      [{'type':'rtext', 'text':'username', 'alpha':'0.60', 'color':'0xFF0000', 'size':'15', 'interval':'5000'}]
+WATERMARK;
+  // Refer to the blog https://www.vdocipher.com/blog/2014/12/add-text-to-videos-with-watermark/ for more details
+  // on writing annotation code for watermark
   $otp_post_array = array(
-    "ttl" => $ttl
+    "ttl" => $ttl,
+    "annotate" => $annotate_code
   );
   $header = array(
       'Authorization: Apisecret ' . $client_key,

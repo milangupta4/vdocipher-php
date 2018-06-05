@@ -1,8 +1,8 @@
 <?php
 // Function called to get OTP, starts
 function vdo_otp($video_details) {
-    $url = "https://dev.vdocipher.com/api/videos/$video_id/otp";
     $video_id = $video_details["video_id"];
+    $url = "https://dev.vdocipher.com/api/videos/$video_id/otp";
     $client_key = $video_details["client_key"];
     $otp_post_array = $video_details["otp_post_array"];
     $header = array(
